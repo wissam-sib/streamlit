@@ -130,7 +130,10 @@ class Selectbox extends React.PureComponent<Props, State> {
     options: readonly Option[],
     filterValue: string
   ): readonly Option[] =>
-    fuzzyFilterSelectOptions(options as SelectOption[], filterValue)
+    fuzzyFilterSelectOptions(options as SelectOption[], filterValue).slice(
+      0,
+      30
+    )
 
   public render(): React.ReactNode {
     const style = { width: this.props.width }

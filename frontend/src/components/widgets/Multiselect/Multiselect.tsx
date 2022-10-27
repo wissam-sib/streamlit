@@ -204,7 +204,7 @@ class Multiselect extends React.PureComponent<Props, State> {
     return fuzzyFilterSelectOptions(
       unselectedOptions as MultiselectOption[],
       filterValue
-    )
+    ).slice(0, 30)
   }
 
   public render(): React.ReactNode {
